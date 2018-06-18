@@ -5,6 +5,7 @@
     "target": "es2018",
     "module": "es2015",
     "declaration": true,
+    "declarationDir": "types/",
     "esModuleInterop": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",

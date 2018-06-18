@@ -1,11 +1,11 @@
 {
   "name": "mobx-valite-form-store",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A MobX form store using `valite` as validator.",
   "cdn": "dist/mobx-valite-form-store.js",
   "main": "dist/mobx-valite-form-store.cjs.js",
   "unpkg": "dist/mobx-valite-form-store.js",
-  "types": "dist/mobx-valite-form-store.d.ts",
+  "types": "types/mobx-valite-form-store.d.ts",
   "module": "dist/mobx-valite-form-store.es.js",
   "browser": "dist/mobx-valite-form-store.js",
   "jsdelivr": "dist/mobx-valite-form-store.js",

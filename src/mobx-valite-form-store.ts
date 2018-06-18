@@ -1,15 +1,15 @@
 import { validate, validateProperties, isValid, Validator } from 'valite';
 import { observable, action, computed } from 'mobx';
 
-type Errors <Entries extends Object> = {
+export type Errors <Entries extends Object> = {
   [ Entry in keyof Entries ]?: string;
 };
 
-type Validators <Entries extends Object> =  {
+export type Validators <Entries extends Object> =  {
   [ Entry in keyof Entries ]?: Array<Validator>;
 };
 
-class FormStore <Entries extends Object> {
+export default class FormStore <Entries extends Object> {
   @observable ticks: number = 0;
   @observable errors: Errors<Entries> = {};
   @observable entries: Entries;
@@ -89,5 +89,3 @@ class FormStore <Entries extends Object> {
     this.entries = entries;
   }
 }
-
-export { FormStore as default, Errors, Validators };
