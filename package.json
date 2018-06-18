@@ -4,7 +4,8 @@
   "description": "A MobX form store using `valite` as validator.",
   "main": "mobx-valite-form-store.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc && bili dist/mobx-valite-form-store.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,17 @@
   "bugs": {
     "url": "https://github.com/VitorLuizC/mobx-valite-form-store/issues"
   },
-  "homepage": "https://github.com/VitorLuizC/mobx-valite-form-store#readme"
+  "homepage": "https://github.com/VitorLuizC/mobx-valite-form-store#readme",
+  "devDependencies": {
+    "@types/node": "^10.3.3",
+    "bili": "^3.1.2",
+    "mobx": "^5.0.2",
+    "typescript": "^2.9.2"
+  },
+  "dependencies": {
+    "valite": "^0.3.1"
+  },
+  "peerDependencies": {
+    "mobx": "~5.0"
+  }
 }
