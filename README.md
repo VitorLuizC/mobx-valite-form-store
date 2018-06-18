@@ -19,20 +19,14 @@ yarn add mobx-valite-form-store
 
 This module provides a store class to handle form states, validators & their error states.
 
-```tsx
+```js
 import React, { Component } from 'react';
 import { observer } from 'mobx-react';
 import { observable } from 'mobx';
-import FormStore, { Validators } from 'mobx-valite-form';
-
-// FormStore entries model.
-type Entries = { name: string; };
-
-// Initial state of store's entries.
-const entries: Entries = { name: '' };
+import FormStore from 'mobx-valite-form';
 
 // An validator schema for entries object.
-const validators: Validators<Entries> = {
+const validators = {
   name: [
     (name) => (typeof name === 'string' && !!name.trim()) || 'Name is a required entry.',
     (name) => (name.length > 2 && name.length < 30) || 'Name should have between 2 and 30 chars.'
@@ -41,7 +35,7 @@ const validators: Validators<Entries> = {
 
 @observer
 export default class Form extends Component {
-  @observable store = new FormStore(entries, validators);
+  @observable store = new FormStore({ name: '' }, validators);
 
   onSubmit = async () => {
     await this.store.validateEntries();
