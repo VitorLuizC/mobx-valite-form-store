@@ -10,3 +10,6 @@ package-lock.json
 # Log files.
 *.log
 *.log.*
+
+# Distribution sources.
+dist/
