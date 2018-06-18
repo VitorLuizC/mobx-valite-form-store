@@ -1,8 +1,3 @@
-/*!
- * mobx-valite-form-store v0.0.0
- * (c) 2018-present Vitor Luiz Cavalcanti <vitorluizc@outlook.com> (https://vitorluizc.github.io)
- * Released under the MIT License.
- */
 (function (global, factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('mobx')) :
 	typeof define === 'function' && define.amd ? define(['mobx'], factory) :
@@ -1887,10 +1882,10 @@
 
 	FormStore.prototype.setEntry = function setEntry (entry, value) {
 	  this.SET_ENTRY(entry, value);
-	  this.validateEntry(entry, value);
+	  this.validateEntry(entry);
 	};
 
-	FormStore.prototype.validateEntry = function validateEntry (entry, value) {
+	FormStore.prototype.validateEntry = function validateEntry (entry) {
 	  return new Promise(function ($return, $error) {
 	    this.SET_LOADING();
 
@@ -1913,7 +1908,7 @@
 
 	    try {
 	      var error$1;
-	      return Promise.resolve(validate(value, this.validators[entry])).then(function ($await_3) {
+	      return Promise.resolve(validate(this.entries[entry], this.validators[entry])).then(function ($await_3) {
 	        try {
 	          error$1 = $await_3;
 	          this.SET_ERROR(entry, error$1);

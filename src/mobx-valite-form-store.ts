@@ -30,14 +30,14 @@ class FormStore <Entries extends Object> {
 
   setEntry <Entry extends keyof Entries> (entry: Entry, value: Entries[Entry]) {
     this.SET_ENTRY(entry, value);
-    this.validateEntry(entry, value);
+    this.validateEntry(entry);
   }
 
-  async validateEntry <Entry extends keyof Entries> (entry: Entry, value: Entries[Entry]) {
+  async validateEntry <Entry extends keyof Entries> (entry: Entry) {
     this.SET_LOADING();
 
     try {
-      const error = await validate(value, this.validators[entry]);
+      const error = await validate(this.entries[entry], this.validators[entry]);
       this.SET_ERROR(entry, error);
       this.UNSET_LOADING();
     } catch (error) {
@@ -90,4 +90,4 @@ class FormStore <Entries extends Object> {
   }
 }
 
-export default FormStore;
+export { FormStore as default, Errors, Validators };
