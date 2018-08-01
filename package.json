@@ -1,6 +1,6 @@
 {
   "name": "mobx-valite-form-store",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "A MobX form store using `valite` as validator.",
   "cdn": "dist/mobx-valite-form-store.js",
   "main": "dist/mobx-valite-form-store.cjs.js",
@@ -42,14 +42,14 @@
   },
   "homepage": "https://github.com/VitorLuizC/mobx-valite-form-store#readme",
   "devDependencies": {
-    "@types/node": "^10.3.3",
+    "@types/node": "^10.5.5",
     "ava": "^0.25.0",
     "bili": "^3.1.2",
-    "mobx": "^5.0.2",
-    "typescript": "^2.9.2"
+    "mobx": "^5.0.3",
+    "typescript": "^3.0.1"
   },
   "dependencies": {
-    "valite": "^0.3.1"
+    "valite": "^0.4.0"
   },
   "peerDependencies": {
     "mobx": "~5.0"

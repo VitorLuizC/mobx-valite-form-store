@@ -1,4 +1,4 @@
-import { validate, validateProperties, isValid, Validator } from 'valite';
+import { validate, validateSchema, isValid, Validator } from 'valite';
 import { observable, action, computed } from 'mobx';
 
 export type Errors <Entries extends Object> = {
@@ -50,7 +50,7 @@ export default class FormStore <Entries extends Object> {
     this.SET_LOADING();
 
     try {
-      const errors = await validateProperties(this.entries, this.validators);
+      const errors = await validateSchema(this.entries, this.validators);
       this.SET_ERRORS(errors);
       this.UNSET_LOADING();
     } catch (error) {
